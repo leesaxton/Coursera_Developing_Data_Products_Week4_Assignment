@@ -6,10 +6,9 @@
 #
 #    http://shiny.rstudio.com/
 #
-
 library(shiny)
 library(flexdashboard)
-
+# Use reactive wrapper to interactively calculate BMI from slider inputs
 shinyServer(function(input, output) {
     bmi <- reactive({
         ht <- (input$slider_ht)/100
@@ -26,6 +25,7 @@ shinyServer(function(input, output) {
     output$calculated_bmi <- renderText({
         paste("Your calculated BMI is ", format(round(bmi(),2),nsmall=2))
     })
+    # Create gauge plot to display calculated BMI
     output$gauge = renderGauge({
         gauge(value=format(round(bmi(),2),nsmall=2),
               min=0,

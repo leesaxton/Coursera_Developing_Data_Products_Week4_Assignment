@@ -6,16 +6,13 @@
 #
 #    http://shiny.rstudio.com/
 #
-
 library(shiny)
 library(flexdashboard)
-
-# Define UI for application that draws a histogram
+# Define UI for application that calculates BMI from input height and weight
 shinyUI(fluidPage(
 
     # Application title
     titlePanel("BMI Calculator with Yorkshire Definitions"),
-
     # Sidebar with a slider input for height and weight
     sidebarLayout(
         sidebarPanel(
@@ -34,7 +31,8 @@ shinyUI(fluidPage(
                         step = 1,
                         value=175)
         ),
-
+        # Main panel displaying input values and calculated BMI along with a
+        # cheeky interopretation of BMI ranges and a gauge plot of the calculated BMI
          mainPanel(
              h3("BMI Calculation"),
              h4 (""),
