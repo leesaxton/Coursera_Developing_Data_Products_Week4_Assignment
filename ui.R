@@ -32,7 +32,7 @@ shinyUI(fluidPage(
                         value=175)
         ),
         # Main panel displaying input values and calculated BMI along with a
-        # cheeky interopretation of BMI ranges and a gauge plot of the calculated BMI
+        # cheeky interpretation of BMI ranges and a gauge plot of the calculated BMI
          mainPanel(
              h3("BMI Calculation"),
              h4 (""),
